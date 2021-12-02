@@ -1,0 +1,130 @@
+[
+  {
+    "color": "red",
+    "id": 1,
+    "conditional": false,
+    "conditional1": false
+  },
+  {
+    "color": "green",
+    "id": 2,
+    "conditional": false,
+    "conditional1": false
+  },
+  {
+  "color": "blue",
+  "id": 3,
+    "conditional": false,
+    "conditional1": false
+  },
+  {
+  "color": "yellow",
+  "id": 4,
+    "conditional": false
+  },
+  {
+    "color": "black",
+    "id": 5,
+    "conditional": false
+  },
+  {
+    "color": "orange",
+    "id": 6,
+    "conditional": false
+  },
+  {
+    "color": "silver",
+    "id": 7,
+    "conditional": false
+  },
+  {
+    "color": "maroon",
+    "id": 8,
+    "conditional": false
+  },
+  {
+    "color": "olive",
+    "id": 9,
+    "conditional": false
+  },
+  {
+    "color": "aqua",
+    "id": 10,
+    "conditional": false
+  },
+  {
+    "color": "lime",
+    "id": 11,
+    "conditional": false
+  },
+  {
+    "color": "fuchsia",
+    "id": 12,
+    "conditional": false
+  },
+  {
+    "color": "purple",
+    "id": 13,
+    "conditional": false
+  },
+  {
+    "color": "navy",
+    "id": 14,
+    "conditional": false
+  },
+  {
+    "color": "teal",
+    "id": 15,
+    "conditional": false
+  },
+  {
+    "color": "plum",
+    "id": 16,
+    "conditional": false
+  },
+  {
+    "color": "blueviolet",
+    "id": 17,
+    "conditional": false
+  },
+  {
+    "color": "rosybrown",
+    "id": 18,
+    "conditional": false
+  },
+  {
+    "color": "darkgoldenrod",
+    "id": 19,
+    "conditional": false
+  },
+  {
+    "color": "dimgray",
+    "id": 20,
+    "conditional": false
+  },
+  {
+    "color": "gainsboro",
+    "id": 21,
+    "conditional": false
+  },
+  {
+    "color": "lightpink",
+    "id": 22,
+    "conditional": false
+  },
+  {
+    "color": "forestgreen",
+    "id": 23,
+    "conditional": false
+  },
+  {
+    "color": "darkred",
+    "id": 24,
+    "conditional": false
+  },
+  {
+    "color": "darkturquoise",
+    "id": 25,
+    "conditional": false
+  }
+]
