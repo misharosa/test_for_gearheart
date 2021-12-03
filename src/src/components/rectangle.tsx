@@ -3,10 +3,16 @@ import classNames from "classnames";
 import { Props } from "../type/type";
 
 export const Rectangle: React.FC<Props> = ({ items, onChoose, turn }) => {
+    const newColor = [...items].sort(function(firstColor, secondColor){
+        if(firstColor.color < secondColor.color) { return -1; }
+        if(firstColor.color > secondColor.color) { return 1; }
+        return 0
+    });
+
         return (
             <div>
                 <div className='rectangle'>
-                    {items.map(item => (
+                    {newColor.map(item => (
                         <button
                             disabled={item.conditional && !item.conditional || item.conditional && item.conditional}
                             key={item.id}

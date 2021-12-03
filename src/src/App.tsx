@@ -4,7 +4,12 @@ import colorFromServer from './data/data.json'
 import { Rectangle } from "./components/rectangle";
 import { ColorItem } from "./components/ColorItem";
 
+// localStorage.setItem('colors', JSON.stringify(colorFromServer))
+// const localColor:any = localStorage.getItem('colors')
+// const newColor = JSON.parse(localColor)
+
 function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+
     const [colors, setColors] = useState(colorFromServer);
     const [turn, setTurn] = useState(false)
     const [counter, setCounter] = useState(1)
@@ -15,14 +20,14 @@ function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTM
         console.log(counter)
         if (counter === 25) {
             setResult(0)
-          colors.forEach(color => {
+          colors.forEach((color:any) => {
               if (color.conditional1) {
                   setResult(prev => prev + 1)
               }
           })
         }
         setTurn(false)
-        setColors(prevColors => prevColors.map(color => {
+        setColors((prevColors:any) => prevColors.map((color:any) => {
             if (color.id === colorId) {
                 return {...color, conditional: true}
             }
@@ -32,7 +37,7 @@ function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTM
 
     const handleRectangle = (colorId: number) => {
         setTurn(true)
-        setColors(prevColors => prevColors.map(color => {
+        setColors((prevColors:any) => prevColors.map((color:any) => {
             if (color.id === colorId) {
                 return {...color, conditional1: true}
             }
@@ -46,12 +51,10 @@ function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTM
     const handleClear = () => {
         setTurn(false)
         setCounter(1)
-        setColors(prevColors => prevColors.map(color => {
+        setColors((prevColors:any) => prevColors.map((color:any) => {
                 return {...color, conditional1: false, conditional: false}
             }))
     }
-
-    console.log(colors)
 
     return (
        <div className="App">
@@ -64,11 +67,8 @@ function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTM
            </div>
            <div className="line"> </div>
            <div>
-               {!turn && counter !== 26 &&
-               <h1>👇Choose a color🤓 <span className="text badge bg-secondary">Good Luck!</span></h1>
-               }
-               {turn && counter !== 26 &&
-               <h1>👈Choose a color🤓 <span className="text badge bg-secondary">Good Luck!</span></h1>
+               {counter !== 26 &&
+               <h1>{!turn ? '👇' : '👈'}Choose a color🤓 <span className="text badge bg-secondary">Good Luck!</span></h1>
                }
                {
                    counter === 26 &&
