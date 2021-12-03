@@ -4,20 +4,22 @@ import colorFromServer from './data/data.json'
 import { Rectangle } from "./components/rectangle";
 import { ColorItem } from "./components/ColorItem";
 
-// localStorage.setItem('colors', JSON.stringify(colorFromServer))
-// const localColor:any = localStorage.getItem('colors')
-// const newColor = JSON.parse(localColor)
+const getLocal:any = localStorage.getItem('color')
+if (getLocal.length === 0) {
+    localStorage.setItem('color', JSON.stringify(colorFromServer))
+}
+const newLocal = JSON.parse(getLocal)
 
 function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 
-    const [colors, setColors] = useState(colorFromServer);
+    const [colors, setColors] = useState(newLocal);
     const [turn, setTurn] = useState(false)
     const [counter, setCounter] = useState(1)
     const [result, setResult] = useState(0)
+    localStorage.setItem('color', JSON.stringify(colors))
 
     const handleText = (colorId: number) => {
         setCounter(pre => pre + 1)
-        console.log(counter)
         if (counter === 25) {
             setResult(0)
           colors.forEach((color:any) => {
@@ -49,6 +51,7 @@ function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTM
     }
 
     const handleClear = () => {
+        localStorage.clear()
         setTurn(false)
         setCounter(1)
         setColors((prevColors:any) => prevColors.map((color:any) => {
