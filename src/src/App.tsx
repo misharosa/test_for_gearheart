@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import './App.scss';
 import colorFromServer from './data/data.json'
 import { Rectangle } from "./components/rectangle";
 import { ColorItem } from "./components/ColorItem";
 
-const getLocal:any = localStorage.getItem('color')
-if (getLocal.length === 0) {
+if (!localStorage.getItem('color')) {
     localStorage.setItem('color', JSON.stringify(colorFromServer))
 }
-const newLocal = JSON.parse(getLocal)
 
 function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    const getLocal:any = localStorage.getItem('color')
+    const newLocal = JSON.parse(getLocal)
 
     const [colors, setColors] = useState(newLocal);
     const [turn, setTurn] = useState(false)
