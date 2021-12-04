@@ -9,11 +9,7 @@ export const ColorItem:React.FC<Props> = ({ items, onChoose, turn }) => {
                 <ul className="list">
                     {items.map(item => (
                         <button
-                            disabled={
-                                item.conditional && !item.conditional
-                                || item.conditional && item.conditional
-                                || !turn
-                            }
+                            disabled={item.conditional || !turn}
                             className="btn-outline-secondary"
                             key={item.id}
                             onClick={() => {

@@ -20,6 +20,7 @@ function App():React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTM
 
     const handleText = (colorId: number) => {
         setCounter(pre => pre + 1)
+        console.log(counter)
         if (counter === 25) {
             setResult(0)
           colors.forEach((color:any) => {
